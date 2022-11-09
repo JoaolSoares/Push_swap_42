@@ -6,20 +6,23 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:55:50 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/03 17:20:03 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/07 22:01:16 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+//	INCLUDES	
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
 
+//	DEFINES
 # define BUFFER_SIZE 42
 
-/* IS_FUNCTIONS */
+/* ------------ FUNCTIONS ------------ */
+//	IS_FUNCTIONS
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
@@ -27,7 +30,7 @@ int			ft_isascii(int c);
 int			ft_isprint(int c);
 int			ft_str_isnum(char *str);
 
-/* MEM_FUNCTIONS */
+//	MEM_FUNCTIONS
 void		*ft_memset(void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
@@ -36,13 +39,14 @@ void		*ft_memmove(void *dest, const void *src, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
-/* NUM_FUNCTIONS */
+//	NUM_FUNCTIONS
 int			ft_atoi(const char *nptr);
+long int	ft_atol(const char *nptr);
 char		*ft_itoa(int n);
 long int	ft_hexatoi(char *str_hexa);
 long int	ft_power(int nb, int power);
 
-/* STR_FUNCTIONS */
+//	STR_FUNCTIONS
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 
@@ -67,16 +71,16 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char		*ft_borderchar(char *str, char border);
 
-/* PUT_FUNCTIONS */
+//	PUT_FUNCTIONS
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
-/* GNL */
+//	GNL
 char		*get_next_line(int fd);
 
-/* PRINTF */
+//	PRINTF
 int			ft_printf(const char *str, ...);
 int			ft_type_conversion(va_list ap, char c);
 

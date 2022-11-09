@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:29:00 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/05 17:56:59 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/09 00:14:20 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,34 @@
 # include "../lib/include/libft.h"
 
 //	STRUCTS
-typedef struct s_data
+typedef struct s_stack
 {
-	int	*stack_a;
-	int	*stack_b;
-	int	size;
+	int	*a;
+	int	*b;
+	int amount_a;
+	int amount_b;
 
-}	t_data;
+}	t_stack;
 
 //	UTILS FUNCTIONS	
-t_data	*init_struct_values(int argc, char *argv[]);
+t_stack	*init_struct_values(int argc, char *argv[]);
 
 //	CASES FUNCTIONS
-void	identify_case(t_data *data);
+void	identify_case(t_stack *stack);
+
+//	MOVEMENT FUNCTIONS
+// swap
+void	swap_a(t_stack *stack);
+void	swap_b(t_stack *stack);
+void	swap_s(t_stack *stack);
+// push
+void	push_a(t_stack *stack);
+void	push_b(t_stack *stack);
+// rotate
+void	rotate_a(t_stack *stack);
+void	rotate_b(t_stack *stack);
+void	rotate_r(t_stack *stack);
+// rev_rotate
 
 
 #endif
