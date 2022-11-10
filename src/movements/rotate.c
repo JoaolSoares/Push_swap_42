@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:10:50 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/09 00:13:49 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:12:16 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,18 @@
  */
 void	rotate_a(t_stack *stack)
 {
-	
+	int	i;
+	int	firts_element;
+
+	if (stack->amount_a > 1)
+	{
+		firts_element = stack->a[0];
+		i = -1;
+		while (++i < stack->amount_a - 1)
+			stack->a[i] = stack->a[i + 1];
+		stack->a[i] = firts_element;
+		ft_printf("ra\n");
+	}
 }
 
 /*
@@ -27,7 +38,18 @@ void	rotate_a(t_stack *stack)
  */
 void	rotate_b(t_stack *stack)
 {
-	
+	int	i;
+	int	firts_element;
+
+	if (stack->amount_b > 1)
+	{
+		firts_element = stack->b[0];
+		i = -1;
+		while (++i < stack->amount_b - 1)
+			stack->b[i] = stack->b[i + 1];
+		stack->b[i] = firts_element;
+		ft_printf("rb\n");
+	}
 }
 
 /*
@@ -35,5 +57,10 @@ void	rotate_b(t_stack *stack)
  */
 void	rotate_r(t_stack *stack)
 {
-	
+	if (stack->amount_a > 1 && stack->amount_b > 1)
+	{
+		rotate_a(stack);
+		rotate_b(stack);
+		ft_printf("rr\n");
+	}	
 }

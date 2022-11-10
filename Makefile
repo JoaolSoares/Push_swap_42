@@ -6,7 +6,7 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 23:29:46 by jlucas-s          #+#    #+#              #
-#    Updated: 2022/11/09 00:14:44 by jlucas-s         ###   ########.fr        #
+#    Updated: 2022/11/09 23:31:29 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,15 @@ NOCOLOR =		\033[0m
 LIBFTPATH =		./lib
 LIBFT =			./lib/libft.a
 
-SRCS =			src/main.c \
-				src/utils.c \
-				src/cases.c \
-				src/movements/swap.c \
-				src/movements/push.c \
-				src/movements/rotate.c \
+SRCS =			src/main.c					\
+				src/utils.c					\
+				src/cases.c					\
+				src/long_utils.c			\
+				src/movements/swap.c		\
+				src/movements/push.c		\
+				src/movements/rotate.c		\
+				src/movements/rev_rotate.c	\
+				src/testes.c				\
 
 OBJS =			${SRCS:.c=.o}
 

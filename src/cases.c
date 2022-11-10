@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 17:48:14 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/09 00:25:44 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:39:15 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,34 +38,10 @@ static void	three_case(t_stack *stack)
 	}
 }
 
-/*
- * Função de teste. (apagar depois)
- */
-static void	print_stacks(t_stack *stack)
-{
-	int i = 0;
-	while (i < stack->amount_a)
-	{
-		ft_printf("stack->a[%i] = %i\n", i, stack->a[i]);
-		i++;
-	}
-	ft_printf("------------------\n");
-	i = 0;
-	while (i < stack->amount_b)
-	{
-		ft_printf("stack->b[%i] = %i\n", i, stack->b[i]);
-		i++;
-	}
-}
-
 static void	long_case(t_stack *stack)
 {
-	push_b(stack);
-	push_b(stack);
-	push_b(stack);
-	push_a(stack);
-	swap_s(stack);
-	print_stacks(stack);
+	if (!verify_order(stack->a, stack->amount_a))
+		ft_printf("is not sorted\n");
 }
 
 void	identify_case(t_stack *stack)
