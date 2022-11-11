@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:46:25 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/09 21:52:16 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:28:05 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	print_stacks(t_stack *stack)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	ft_printf("------------------\n");
 	while (i < stack->amount_a)
 	{
@@ -29,4 +30,5 @@ void	print_stacks(t_stack *stack)
 		ft_printf("stack->b[%i] = %i\n", i, stack->b[i]);
 		i++;
 	}
+	ft_printf("------------------\n");
 }

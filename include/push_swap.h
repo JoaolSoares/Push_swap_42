@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:29:00 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/09 23:37:24 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/11 00:33:27 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ typedef struct s_stack
 {
 	int	*a;
 	int	*b;
-	int amount_a;
-	int amount_b;
+	int	amount_a;
+	int	amount_b;
 
 }	t_stack;
 
@@ -37,7 +37,9 @@ t_stack	*init_struct_values(int argc, char *argv[]);
 void	identify_case(t_stack *stack);
 
 // LONG UTILS
-int	verify_order(int *mtx, int size);
+int		verify_order(int *mtx, int size);
+void	put_next_in_the_top(t_stack *stack);
+int		locate_smallest(int *mtx, int size);
 
 //	MOVEMENT FUNCTIONS
 // swap
