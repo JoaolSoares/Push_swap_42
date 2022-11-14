@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 17:48:14 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/11 00:51:24 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/13 23:17:07 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,24 @@ static void	three_case(t_stack *stack)
 
 static void	long_case(t_stack *stack)
 {
-	while (!verify_order(stack->a, stack->amount_a))
+	if (!verify_order(stack->a, stack->amount_a))
 	{
 		while (stack->amount_a > 3)
 			push_b(stack);
 		three_case(stack);
+		put_next_in_the_top(stack);
+		push_a(stack);
+	}
+	while ((!verify_order(stack->a, stack->amount_a)) || \
+			(verify_order(stack->a, stack->amount_a) && stack->amount_b > 0))
+	{
 		while (stack->amount_b > 0)
 		{
 			put_next_in_the_top(stack);
 			push_a(stack);
 		}
-		if (locate_smallest(stack->a, stack->amount_a) < (stack->amount_a / 2))
+		if (locate_smaller(stack->a, stack->amount_a) <= (stack->amount_a / 2) \
+			&& !verify_order(stack->a, stack->amount_a))
 			rotate_a(stack);
 		else
 			rev_rotate_a(stack);
