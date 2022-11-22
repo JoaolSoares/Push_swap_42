@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_isnum.c                                     :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 17:19:32 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/21 19:46:12 by jlucas-s         ###   ########.fr       */
+/*   Created: 2022/11/21 19:22:04 by jlucas-s          #+#    #+#             */
+/*   Updated: 2022/11/21 19:22:20 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/checker.h"
 
-int	ft_str_isnum(char *str)
+void	free_stack(t_stack *stack)
+{
+	free(stack->a);
+	free(stack->b);
+	free(stack);
+}
+
+void	free_mtx(char **mtx)
 {
 	int	i;
 
 	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
+	while (mtx[i])
+		free(mtx[i++]);
+	free(mtx);
 }

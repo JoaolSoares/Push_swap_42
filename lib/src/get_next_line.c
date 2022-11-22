@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:17:31 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/10/05 04:23:40 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:58:06 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,11 @@ char	*get_next_line(int fd)
 	static char	*content;
 	char		*line;
 
+	if (fd == -1)
+	{
+		free(content);
+		return (NULL);
+	}
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	content = ft_get_content(fd, content);

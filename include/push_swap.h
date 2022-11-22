@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:29:00 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/13 22:16:21 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:11:21 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,20 @@ int		locate_smaller(int *mtx, int size);
 
 //	MOVEMENT FUNCTIONS
 // swap
-void	swap_a(t_stack *stack);
-void	swap_b(t_stack *stack);
-void	swap_s(t_stack *stack);
+void	swap_a(t_stack *stack, int opt);
+void	swap_b(t_stack *stack, int opt);
+void	swap_s(t_stack *stack, int opt);
 // push
-void	push_a(t_stack *stack);
-void	push_b(t_stack *stack);
+void	push_a(t_stack *stack, int opt);
+void	push_b(t_stack *stack, int opt);
 // rotate
-void	rotate_a(t_stack *stack);
-void	rotate_b(t_stack *stack);
-void	rotate_r(t_stack *stack);
+void	rotate_a(t_stack *stack, int opt);
+void	rotate_b(t_stack *stack, int opt);
+void	rotate_r(t_stack *stack, int opt);
 // rev_rotate
-void	rev_rotate_a(t_stack *stack);
-void	rev_rotate_b(t_stack *stack);
-void	rev_rotate_r(t_stack *stack);
+void	rev_rotate_a(t_stack *stack, int opt);
+void	rev_rotate_b(t_stack *stack, int opt);
+void	rev_rotate_r(t_stack *stack, int opt);
 
 // TESTES
 void	print_stacks(t_stack *stack);

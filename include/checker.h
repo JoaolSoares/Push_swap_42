@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_isnum.c                                     :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 17:19:32 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/21 19:46:12 by jlucas-s         ###   ########.fr       */
+/*   Created: 2022/11/20 15:06:07 by jlucas-s          #+#    #+#             */
+/*   Updated: 2022/11/21 19:22:49 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-int	ft_str_isnum(char *str)
-{
-	int	i;
+//	INCLUDES
+# include "../lib/include/libft.h"
+# include "push_swap.h"
 
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
-}
+// FREE
+void	free_stack(t_stack *stack);
+void	free_mtx(char **mtx);
+
+// MAIN UTILS
+void	exec_movement(t_stack *stack, char *movements);
+char	**get_movements(t_stack *stack);
+
+#endif

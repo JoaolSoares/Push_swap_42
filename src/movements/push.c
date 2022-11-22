@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:26 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/09 00:18:32 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:11:48 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * pa (push a): Take the first element of the b and put it at the top of a.
  *		Do nothing if b is empty.
  */
-void	push_a(t_stack *stack)
+void	push_a(t_stack *stack, int opt)
 {
 	int	temp_a;
 	int	i;
@@ -32,7 +32,8 @@ void	push_a(t_stack *stack)
 		i = -1;
 		while (++i < stack->amount_b)
 			stack->b[i] = stack->b[i + 1];
-		ft_printf("pa\n");
+		if (opt)
+			ft_printf("pa\n");
 	}
 }
 
@@ -40,7 +41,7 @@ void	push_a(t_stack *stack)
  * pb (push b): Take the first element of the a and put it at the top of b.
  *		Do nothing if a is empty.
  */
-void	push_b(t_stack *stack)
+void	push_b(t_stack *stack, int opt)
 {
 	int	temp_b;
 	int	i;
@@ -56,6 +57,7 @@ void	push_b(t_stack *stack)
 		i = -1;
 		while (++i < stack->amount_a)
 			stack->a[i] = stack->a[i + 1];
-		ft_printf("pb\n");
+		if (opt)
+			ft_printf("pb\n");
 	}
 }

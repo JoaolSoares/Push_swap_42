@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:10:50 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/09 20:12:16 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:33:03 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * ra (rotate a): Shift up all elements of stack a by 1.
  *		The first element becomes the last one.
  */
-void	rotate_a(t_stack *stack)
+void	rotate_a(t_stack *stack, int opt)
 {
 	int	i;
 	int	firts_element;
@@ -28,7 +28,8 @@ void	rotate_a(t_stack *stack)
 		while (++i < stack->amount_a - 1)
 			stack->a[i] = stack->a[i + 1];
 		stack->a[i] = firts_element;
-		ft_printf("ra\n");
+		if (opt)
+			ft_printf("ra\n");
 	}
 }
 
@@ -36,7 +37,7 @@ void	rotate_a(t_stack *stack)
  * rb (rotate b): Shift up all elements of stack b by 1.
  *		The first element becomes the last one.
  */
-void	rotate_b(t_stack *stack)
+void	rotate_b(t_stack *stack, int opt)
 {
 	int	i;
 	int	firts_element;
@@ -48,19 +49,21 @@ void	rotate_b(t_stack *stack)
 		while (++i < stack->amount_b - 1)
 			stack->b[i] = stack->b[i + 1];
 		stack->b[i] = firts_element;
-		ft_printf("rb\n");
+		if (opt)
+			ft_printf("rb\n");
 	}
 }
 
 /*
  * rr : ra and rb at the same time.
  */
-void	rotate_r(t_stack *stack)
+void	rotate_r(t_stack *stack, int opt)
 {
 	if (stack->amount_a > 1 && stack->amount_b > 1)
 	{
-		rotate_a(stack);
-		rotate_b(stack);
-		ft_printf("rr\n");
+		rotate_a(stack, 0);
+		rotate_b(stack, 0);
+		if (opt)
+			ft_printf("rr\n");
 	}	
 }

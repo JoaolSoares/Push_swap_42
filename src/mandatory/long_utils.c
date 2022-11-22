@@ -6,25 +6,11 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:28:16 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/13 23:14:45 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:14:47 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
-
-int	verify_order(int *mtx, int size)
-{
-	int	i;
-
-	i = 0;
-	while (mtx[i] < mtx[i + 1] && i < size - 1)
-	{
-		if (i == size - 2)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+#include "../../include/push_swap.h"
 
 static int	locate_bigger(int *mtx, int size)
 {
@@ -74,8 +60,8 @@ void	put_next_in_the_top(t_stack *stack)
 	while (stack->a[0] != next)
 	{
 		if (i <= (stack->amount_a) / 2)
-			rotate_a(stack);
+			rotate_a(stack, 1);
 		else
-			rev_rotate_a(stack);
+			rev_rotate_a(stack, 1);
 	}
 }

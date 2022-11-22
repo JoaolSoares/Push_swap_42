@@ -6,17 +6,19 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:28:11 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/11 00:49:38 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/20 15:09:36 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 /* 
  * [X] = feito;
  * [o] = Rever;
  * -----------------------------------------------------------------------
- * [ ] Otimizar, porque ta uma bosta isso daqui! (mas fununcia :D).
+ * [o] Otimizar, porque ta uma bosta isso daqui! (mas fununcia :D).
+ * 	   |_ [ ] Otimizar a cima de 65 numeros;
+ * 			  |_ Talvez até otimizar acima de 30 ou 50;
  * -----
  * [o] Ver a questão de variaveis de ambiente; ($ARG)
  *     |_ Aparentemente já funciona, mas fazer testes melhores;

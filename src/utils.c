@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:29:46 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/10 19:05:27 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/11/21 19:46:34 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	arg_validations(int argc, char *argv[])
 	i = 1;
 	while (argv[i])
 	{
-		if (!ft_str_isnum(argv[i]))
+		if (!ft_str_isnum(argv[i]) || !argv[i][0])
 		{
 			ft_putstr_fd("Error\n", STDERR_FILENO);
 			exit(2);
@@ -82,4 +82,22 @@ void	repeat_validation(t_stack *stack)
 			}
 		}
 	}
+}
+
+/* ---------- VERIFY ---------- */
+
+int	verify_order(int *mtx, int size)
+{
+	int	i;
+
+	if (size == 1)
+		return (1);
+	i = 0;
+	while (mtx[i] < mtx[i + 1] && i < size - 1)
+	{
+		if (i == size - 2)
+			return (1);
+		i++;
+	}
+	return (0);
 }
