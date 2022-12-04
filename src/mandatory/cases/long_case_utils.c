@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   long_utils.c                                       :+:      :+:    :+:   */
+/*   long_case_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 23:28:16 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/21 18:14:47 by jlucas-s         ###   ########.fr       */
+/*   Created: 2022/12/04 20:11:48 by jlucas-s          #+#    #+#             */
+/*   Updated: 2022/12/04 20:14:41 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static int	locate_bigger(int *mtx, int size)
+int	locate_bigger(int *mtx, int size)
 {
 	int	bigger;
 	int	i;
@@ -38,30 +38,32 @@ int	locate_smaller(int *mtx, int size)
 	return (smaller);
 }
 
-void	put_next_in_the_top(t_stack *stack)
+int	turn_to_three(t_stack *stack)
 {
-	int	i;
-	int	next;
+	if (!verify_order(stack->a, stack->amount_a))
+	{
+		while (stack->amount_a > 3)
+			push_b(stack, 1);
+		three_case(stack);
+		return (1);
+	}
+	return (0);
+}
 
-	i = -1;
-	if (stack->b[0] > stack->a[locate_bigger(stack->a, stack->amount_a)])
-		next = stack->a[locate_smaller(stack->a, stack->amount_a)];
+int	locate_next(int *mtx, int size, int num)
+{
+	int	next;
+	int	i;
+
+	if (num > mtx[locate_bigger(mtx, size)])
+		return (locate_smaller(mtx, size));
 	else
 	{
-		next = stack->a[locate_bigger(stack->a, stack->amount_a)];
-		while (++i < stack->amount_a)
-			if ((stack->a[i] > stack->b[0]) && \
-				((stack->b[0] - stack->a[i]) > (stack->b[0] - next)))
-				next = stack->a[i];
+		next = locate_bigger(mtx, size);
+		i = -1;
+		while (++i < size)
+			if ((mtx[i] > num) && ((num - mtx[i]) > (num - mtx[next])))
+				next = i;
 	}
-	i = 0;
-	while (stack->a[i] != next)
-		i++;
-	while (stack->a[0] != next)
-	{
-		if (i <= (stack->amount_a) / 2)
-			rotate_a(stack, 1);
-		else
-			rev_rotate_a(stack, 1);
-	}
+	return (next);
 }

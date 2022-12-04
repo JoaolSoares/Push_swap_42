@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:29:00 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/11/21 18:11:21 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/12/04 20:13:48 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,36 @@ typedef struct s_stack
 
 }	t_stack;
 
+typedef struct s_better
+{
+	int	opt_a;
+	int	opt_b;
+	int	index_a;
+	int	index_b;
+	int	moves;
+
+}	t_better;
+
+
 //	UTILS FUNCTIONS	
 // validations
 void	arg_validations(int argc, char *argv[]);
 void	repeat_validation(t_stack *stack);
 // init
 t_stack	*init_struct_values(int argc, char *argv[]);
+// verify
+int		verify_order(int *mtx, int size);
 
 //	CASES FUNCTIONS
 void	identify_case(t_stack *stack);
+void	three_case(t_stack *stack);
+void	long_case(t_stack *stack);
 
-// LONG UTILS
-int		verify_order(int *mtx, int size);
-void	put_next_in_the_top(t_stack *stack);
+// lONG CASE UTILS
 int		locate_smaller(int *mtx, int size);
+int		locate_bigger(int *mtx, int size);
+int		locate_next(int *mtx, int size, int num);
+int	turn_to_three(t_stack *stack);
 
 //	MOVEMENT FUNCTIONS
 // swap

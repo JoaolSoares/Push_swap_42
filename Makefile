@@ -6,7 +6,7 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 23:29:46 by jlucas-s          #+#    #+#              #
-#    Updated: 2022/11/21 21:29:37 by jlucas-s         ###   ########.fr        #
+#    Updated: 2022/12/04 20:12:30 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,22 +23,23 @@ NOCOLOR =		\033[0m
 LIBFTPATH =		./lib
 LIBFT =			./lib/libft.a
 
-PUBLIC_SRCS =	src/utils.c					\
-				src/movements/swap.c		\
-				src/movements/push.c		\
-				src/movements/rotate.c		\
-				src/movements/rev_rotate.c	\
-				src/testes.c				\
+PUBLIC_SRCS =	src/utils.c								\
+				src/movements/swap.c					\
+				src/movements/push.c					\
+				src/movements/rotate.c					\
+				src/movements/rev_rotate.c				\
+				src/testes.c							\
 
-SRCS =			src/mandatory/main.c		\
-				src/mandatory/cases.c		\
-				src/mandatory/long_utils.c	\
-				$(PUBLIC_SRCS)				\
+SRCS =			src/mandatory/main.c					\
+				src/mandatory/cases/three_case.c		\
+				src/mandatory/cases/long_case.c			\
+				src/mandatory/cases/long_case_utils.c	\
+				$(PUBLIC_SRCS)							\
 
-SRCS_BONUS =	src/bonus/main.c			\
-				src/bonus/main_utils.c		\
-				src/bonus/free.c			\
-				$(PUBLIC_SRCS)				\
+SRCS_BONUS =	src/bonus/main.c						\
+				src/bonus/main_utils.c					\
+				src/bonus/free.c						\
+				$(PUBLIC_SRCS)							\
 
 OBJS =			${SRCS:.c=.o}
 OBJS_BONUS =	${SRCS_BONUS:.c=.o}

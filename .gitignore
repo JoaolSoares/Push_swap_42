@@ -3,3 +3,4 @@ checker
 checker_linux
 *.o
 tester
+testes.c
