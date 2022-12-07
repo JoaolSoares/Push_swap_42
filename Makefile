@@ -6,7 +6,7 @@
 #    By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 23:29:46 by jlucas-s          #+#    #+#              #
-#    Updated: 2022/12/04 20:12:30 by jlucas-s         ###   ########.fr        #
+#    Updated: 2022/12/07 16:45:09 by jlucas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ PUBLIC_SRCS =	src/utils.c								\
 				src/movements/push.c					\
 				src/movements/rotate.c					\
 				src/movements/rev_rotate.c				\
-				src/testes.c							\
 
 SRCS =			src/mandatory/main.c					\
 				src/mandatory/cases/three_case.c		\

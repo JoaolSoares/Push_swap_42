@@ -6,11 +6,11 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 20:11:48 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/12/04 20:14:41 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/12/04 20:40:48 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../../include/push_swap.h"
 
 int	locate_bigger(int *mtx, int size)
 {

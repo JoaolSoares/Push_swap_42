@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:28:11 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/12/04 20:16:12 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/12/04 23:53:56 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	identify_case(t_stack *stack)
 		three_case(stack);
 	if (stack->amount_a > 3)
 		long_case(stack);
-
 }
 
 int	main(int argc, char *argv[])

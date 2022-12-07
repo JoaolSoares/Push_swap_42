@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:29:00 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/12/04 20:13:48 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:44:49 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_better
 
 }	t_better;
 
-
 //	UTILS FUNCTIONS	
 // validations
 void	arg_validations(int argc, char *argv[]);
@@ -55,7 +54,7 @@ void	long_case(t_stack *stack);
 int		locate_smaller(int *mtx, int size);
 int		locate_bigger(int *mtx, int size);
 int		locate_next(int *mtx, int size, int num);
-int	turn_to_three(t_stack *stack);
+int		turn_to_three(t_stack *stack);
 
 //	MOVEMENT FUNCTIONS
 // swap
@@ -73,8 +72,5 @@ void	rotate_r(t_stack *stack, int opt);
 void	rev_rotate_a(t_stack *stack, int opt);
 void	rev_rotate_b(t_stack *stack, int opt);
 void	rev_rotate_r(t_stack *stack, int opt);
-
-// TESTES
-void	print_stacks(t_stack *stack);
 
 #endif
