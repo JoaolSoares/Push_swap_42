@@ -6,7 +6,7 @@
 /*   By: jlucas-s <jlucas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:37:16 by jlucas-s          #+#    #+#             */
-/*   Updated: 2022/12/07 16:41:14 by jlucas-s         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:39:28 by jlucas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ void	long_case(t_stack *stack)
 		else
 			rev_rotate_a(stack, 1);
 	}
+	free(better);
 }
